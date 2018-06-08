@@ -13,7 +13,7 @@ namespace ProjetoAutoPosto.Classes
     {
         private string bairro;
         private string cep;
-        private int id_cidade;
+        private int cidade;
         private string cnpj;
         private string complemento;
         private string email_p;
