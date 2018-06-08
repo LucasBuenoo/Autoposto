@@ -13,7 +13,7 @@ namespace ProjetoAutoPosto.Classes
     {
         private string bairro;
         private string cep;
-        private string cidade;
+        private int id_cidade;
         private string cnpj;
         private string complemento;
         private string email_p;
@@ -79,10 +79,10 @@ namespace ProjetoAutoPosto.Classes
             set { estado = value; }
         }
 
-        public string Cidade
+        public int Cidade
         {
-            get { return cidade; }
-            set { cidade = value; }
+            get { return id_cidade; }
+            set { id_cidade = value; }
         }
 
         public string Telefone_Cel
@@ -139,9 +139,9 @@ namespace ProjetoAutoPosto.Classes
             int id = 0;
             try
             {
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO FORNECEDOR (bairro,cep,complemento,fantasia,razao_social,email_p,email_s,logradouro,cnpj," +
+                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO FORNECEDOR (id_cidade,bairro,cep,complemento,fantasia,razao_social,email_p,email_s,logradouro,cnpj," +
                                                                  "inscricao_estadual,telefone_fax,telefone_cel,telefone_res,telefone_whats) " +
-                                       " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}')", bairro, cep, complemento, fantasia, razao_social, email_p, email_s, logradouro, cnpj, inscricao_estadual,telefone_fax,telefone_cel,telefone_res,telefone_whats) + "; SELECT SCOPE_IDENTITY();";
+                                       " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')", id_cidade, bairro, cep, complemento, fantasia, razao_social, email_p, email_s, logradouro, cnpj, inscricao_estadual,telefone_fax,telefone_cel,telefone_res,telefone_whats) + "; SELECT SCOPE_IDENTITY();";
 
                 BD.ExecutaComando(false, out id);
 
