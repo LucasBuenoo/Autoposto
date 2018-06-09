@@ -78,6 +78,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -541,11 +542,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(36, 18);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 22;
+            this.txtID.Visible = false;
+            // 
             // cuCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.groupBox3);
@@ -564,6 +574,7 @@
             this.txtLogradouro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -616,5 +627,6 @@
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
         private System.Windows.Forms.MaskedTextBox mskRG;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

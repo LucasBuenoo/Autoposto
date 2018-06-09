@@ -77,7 +77,7 @@ namespace ProjetoAutoPosto.Cadastros
         private void cuCadastroFuncionario_Load(object sender, EventArgs e)
         {
            
-            cmbSexo.DataSource = ListaTudo.ListaSexos();
+            cmbSexo.DataSource = ListaTudo.ListaSexo();
             cmbSexo.DisplayMember = "nome";
             cmbSexo.ValueMember = "id_sexo";
             cmbSexo.SelectedValue = -1;
@@ -103,7 +103,7 @@ namespace ProjetoAutoPosto.Cadastros
 
             if (cmbEstado.SelectedIndex != 0)
             {
-                Int16 uf = Convert.ToInt16( cmbEstado.SelectedValue );
+                Int16 uf = Convert.ToInt16(cmbEstado.SelectedValue);
                 cmbCidade.DataSource = ListaTudo.ListaCidadePorUf(uf);
                 cmbCidade.DisplayMember = "nome";
                 cmbCidade.ValueMember = "id_cidade";

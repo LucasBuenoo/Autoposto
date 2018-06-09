@@ -13,19 +13,19 @@ namespace ProjetoAutoPosto.Classes
     {
         private string bairro;
         private string cep;
-        private int cidade;
+        private int id_cidade;
         private string cnpj;
         private string complemento;
         private string email_p;
         private string email_s;
-        private string estado;
+        private int id_estado;
         private string fantasia;
         private string telefone_fax;
         private int id_fornecedor;
         private string inscricao_estadual;
         private string logradouro;
         private string telefone_cel;
-        private string telefone_res;
+        private string telefone_com;
         private string telefone_whats;
         private string razao_social;
 
@@ -73,13 +73,13 @@ namespace ProjetoAutoPosto.Classes
             set { complemento = value; }
         }
 
-        public string Estado
+        public int Id_Estado
         {
-            get { return estado; }
-            set { estado = value; }
+            get { return id_estado; }
+            set { id_estado = value; }
         }
 
-        public int Cidade
+        public int Id_Cidade
         {
             get { return id_cidade; }
             set { id_cidade = value; }
@@ -91,10 +91,10 @@ namespace ProjetoAutoPosto.Classes
             set { telefone_cel = value; }
         }
 
-        public string Telefone_Res
+        public string Telefone_com
         {
-            get { return telefone_res; }
-            set { telefone_res = value; }
+            get { return telefone_com; }
+            set { telefone_com = value; }
         }
 
         public string Telefone_Fax
@@ -134,14 +134,15 @@ namespace ProjetoAutoPosto.Classes
             set { razao_social = value; }
         }
 
+
         public int Adicionar()
         {
             int id = 0;
             try
             {
                 BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO FORNECEDOR (id_cidade,bairro,cep,complemento,fantasia,razao_social,email_p,email_s,logradouro,cnpj," +
-                                                                 "inscricao_estadual,telefone_fax,telefone_cel,telefone_res,telefone_whats) " +
-                                       " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')", id_cidade, bairro, cep, complemento, fantasia, razao_social, email_p, email_s, logradouro, cnpj, inscricao_estadual,telefone_fax,telefone_cel,telefone_res,telefone_whats) + "; SELECT SCOPE_IDENTITY();";
+                                                                 "inscricao_estadual,telefone_fax,telefone_cel,telefone_com,telefone_whats) " +
+                                       " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}')", id_cidade, bairro, cep, complemento, fantasia, razao_social, email_p, email_s, logradouro, cnpj, inscricao_estadual,telefone_fax,telefone_cel,telefone_com,telefone_whats) + "; SELECT SCOPE_IDENTITY();";
 
                 BD.ExecutaComando(false, out id);
 

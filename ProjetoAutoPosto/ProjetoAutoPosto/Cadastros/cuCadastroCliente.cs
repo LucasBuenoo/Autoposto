@@ -53,12 +53,12 @@ namespace ProjetoAutoPosto.Cadastros
             clCliente.Sobrenome = txtSobrenome.Text;
             clCliente.Cpf = Convert.ToString(mskCPF.Text);
             clCliente.Rg = Convert.ToString(mskRG.Text);
-            clCliente.Cnpj = Convert.ToString(mskCNPJ);
+            clCliente.Cnpj = Convert.ToString(mskCNPJ.Text);
             clCliente.Dt_Nascimento = Convert.ToDateTime(dtpDataNascimento.Value.ToShortDateString());
             clCliente.Logradouro = txtLogradouro.Text;
             clCliente.Bairro = txtBairro.Text;
             clCliente.Complemento = txtComplemento.Text;
-            clCliente.Cep = Convert.ToString(mskCEP);
+            clCliente.Cep = Convert.ToString(mskCEP.Text);
             clCliente.Telefone_Res = Convert.ToString(mskFoneRes.Text);
             clCliente.Telefone_Cel = Convert.ToString(mskFoneCel.Text);
             clCliente.Telefone_3 = Convert.ToString(mskFone3.Text);
@@ -68,6 +68,7 @@ namespace ProjetoAutoPosto.Cadastros
             clCliente.Id_Cidade = Convert.ToInt16(cmbCidade.SelectedValue);
             clCliente.Id_Sexo = Convert.ToInt16(cmbSexo.SelectedValue);
 
+            txtID.Text = Convert.ToString(clCliente.Adicionar());
 
 
         }
@@ -93,7 +94,7 @@ namespace ProjetoAutoPosto.Cadastros
         {
             Classes.ListaTudo ListaTudo = new ListaTudo();
 
-            cmbSexo.DataSource = ListaTudo.ListaSexos();
+            cmbSexo.DataSource = ListaTudo.ListaSexo();
             cmbSexo.DisplayMember = "nome";
             cmbSexo.ValueMember = "id_sexo";
             cmbSexo.SelectedValue = -1;

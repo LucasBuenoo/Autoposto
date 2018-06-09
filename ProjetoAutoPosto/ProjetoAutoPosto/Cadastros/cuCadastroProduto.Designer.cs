@@ -33,7 +33,6 @@
             this.cmbFornecedor = new System.Windows.Forms.ComboBox();
             this.btnADD = new System.Windows.Forms.Button();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.mskData_Cadastro = new System.Windows.Forms.MaskedTextBox();
             this.cmbUnidadeVenda = new System.Windows.Forms.ComboBox();
             this.cmbUnidadeCusto = new System.Windows.Forms.ComboBox();
             this.txtCodigoBarra = new System.Windows.Forms.TextBox();
@@ -53,15 +52,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.mskData_Cadastro = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mskData_Cadastro);
             this.groupBox1.Controls.Add(this.cmbFornecedor);
             this.groupBox1.Controls.Add(this.btnADD);
             this.groupBox1.Controls.Add(this.cmbMarca);
-            this.groupBox1.Controls.Add(this.mskData_Cadastro);
             this.groupBox1.Controls.Add(this.cmbUnidadeVenda);
             this.groupBox1.Controls.Add(this.cmbUnidadeCusto);
             this.groupBox1.Controls.Add(this.txtCodigoBarra);
@@ -112,15 +112,6 @@
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(615, 32);
             this.cmbMarca.TabIndex = 2;
-            // 
-            // mskData_Cadastro
-            // 
-            this.mskData_Cadastro.Location = new System.Drawing.Point(207, 187);
-            this.mskData_Cadastro.Mask = "00/00/0000";
-            this.mskData_Cadastro.Name = "mskData_Cadastro";
-            this.mskData_Cadastro.Size = new System.Drawing.Size(189, 32);
-            this.mskData_Cadastro.TabIndex = 4;
-            this.mskData_Cadastro.ValidatingType = typeof(System.DateTime);
             // 
             // cmbUnidadeVenda
             // 
@@ -303,6 +294,15 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // mskData_Cadastro
+            // 
+            this.mskData_Cadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.mskData_Cadastro.Location = new System.Drawing.Point(207, 184);
+            this.mskData_Cadastro.Name = "mskData_Cadastro";
+            this.mskData_Cadastro.Size = new System.Drawing.Size(160, 32);
+            this.mskData_Cadastro.TabIndex = 145;
+            this.mskData_Cadastro.Value = new System.DateTime(2018, 6, 7, 19, 2, 0, 0);
+            // 
             // cuCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,9 +341,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.MaskedTextBox mskData_Cadastro;
         private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.ComboBox cmbFornecedor;
+        private System.Windows.Forms.DateTimePicker mskData_Cadastro;
     }
 }

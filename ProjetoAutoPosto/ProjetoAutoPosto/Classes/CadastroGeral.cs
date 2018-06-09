@@ -51,7 +51,7 @@ namespace ProjetoAutoPosto.Classes
             {
                 if (value.Length < 1)
                     throw new ValidationException("A propriedade Marca não pode ser nula.");
-                nome = value;
+                marca = value;
             }
             get { return marca; }
         }

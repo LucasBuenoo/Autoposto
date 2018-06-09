@@ -25,8 +25,7 @@ namespace ProjetoAutoPosto.Classes
         private string tipopessoa;
         private string cep;
         private string complemento;
-        private string estado;
-        private string cidade;
+        private int id_estado;
         private string telefone_res;
         private string telefone_cel;
         private string telefone_3;
@@ -35,8 +34,10 @@ namespace ProjetoAutoPosto.Classes
         private int id_clinte;
         private int id_cidade;
         private string email_s;
+        
 
         conectaBD BD = new conectaBD();
+
 
         public string Nome
         {
@@ -110,18 +111,6 @@ namespace ProjetoAutoPosto.Classes
             set { complemento = value; }
         }
 
-        public string Estado
-        {
-            get { return estado; }
-            set { estado = value; }
-        }
-
-        public string Cidade
-        {
-            get { return cidade; }
-            set { cidade = value; }
-        }
-
         public string Telefone_Res
         {
             get { return telefone_res; }
@@ -170,6 +159,11 @@ namespace ProjetoAutoPosto.Classes
             set { email_s = value; }
         }
 
+        public int Id_Estado
+        {
+            get { return id_estado; }
+            set { id_estado = value; }
+        }
 
         public void Atualizar()
         {
@@ -183,7 +177,7 @@ namespace ProjetoAutoPosto.Classes
             {
                 BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO CLIENTE (id_sexo,id_cidade,bairro,cep,complemento,cpf,dt_nascimento,email_p,email_s,logradouro,cnpj," +
                                                                  "nome,rg,sobrenome,telefone_3,telefone_cel,telefone_res,telefone_4) " +
-                                       " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}')", id_cidade, id_sexo, bairro, cep, complemento, cpf, dt_nascimento.ToShortDateString(), email_p, email_s, logradouro, cnpj, nome, rg, sobrenome, telefone_3, telefone_cel, telefone_res, telefone_4) + "; SELECT SCOPE_IDENTITY();";
+                                       " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}')",id_sexo , id_cidade , bairro, cep, complemento, cpf, dt_nascimento.ToShortDateString(), email_p, email_s, logradouro, cnpj, nome, rg, sobrenome, telefone_3, telefone_cel, telefone_res, telefone_4) + "; SELECT SCOPE_IDENTITY();";
 
                 BD.ExecutaComando(false, out id);
 

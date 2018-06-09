@@ -11,7 +11,7 @@ namespace ProjetoAutoPosto.Classes
     {
         conectaBD BD = new conectaBD();
 
-        public DataTable ListaSexos()
+        public DataTable ListaSexo()
         {
             try
             {

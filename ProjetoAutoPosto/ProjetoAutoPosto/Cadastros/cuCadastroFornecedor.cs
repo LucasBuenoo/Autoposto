@@ -29,12 +29,15 @@ namespace ProjetoAutoPosto.Cadastros
             clFornecedor.Bairro = txtBairro.Text;
             clFornecedor.Cep = Convert.ToString(mskCEP.Text);
             clFornecedor.Complemento = txtComplemento.Text;
-            clFornecedor.Telefone_Res = Convert.ToString(mskFoneRes.Text);
+            clFornecedor.Telefone_com = Convert.ToString(mskFoneRes.Text);
             clFornecedor.Telefone_Cel = Convert.ToString(mskFoneCel.Text);
             clFornecedor.Telefone_Fax = Convert.ToString(mskFoneFax.Text);
             clFornecedor.Telefone_Whats = Convert.ToString(mskFoneWhats.Text);
             clFornecedor.Email_P = txtEmailP.Text;
             clFornecedor.Email_S = txtEmailS.Text;
+            clFornecedor.Id_Cidade = Convert.ToInt16(cmbCidade.SelectedValue);
+
+            txtCodigo.Text = Convert.ToString(clFornecedor.Adicionar());
         }
 
         private void cuCadastroFornecedor_Load(object sender, EventArgs e)
