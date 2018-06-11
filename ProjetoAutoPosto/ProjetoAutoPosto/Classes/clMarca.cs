@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,33 @@ namespace ProjetoAutoPosto.Classes
             set { nome = value; }
         }
 
-        public void Adicionar()
+        public int Adicionar()
         {
-            throw new System.NotImplementedException();
+            int id = 0;
+            try
+            {
+                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO MARCA (nome) " +
+                                       " values ('{0}')", nome) + "; SELECT SCOPE_IDENTITY();";
+
+                BD.ExecutaComando(false, out id);
+
+                if (id > 0)
+                {
+                    MessageBox.Show("Fornecedor cadastrado com sucesso!", "Cadastro com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar Fornecedor", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return id;
+
         }
 
         public void Atualizar()
@@ -46,17 +71,17 @@ namespace ProjetoAutoPosto.Classes
             try
             {
                 int exOK = 0;
-                BD._sql = String.Format("DELETE FROM CLIENTE WHERE ID_CLIENTE = '{0}'", id_marca);
+                BD._sql = String.Format("DELETE FROM MARCA WHERE ID_MARCA = '{0}'", id_marca);
 
                 exOK = BD.ExecutaComando(false);
 
                 if (exOK < 0)
                 {
-                    MessageBox.Show("Erro ao deletar Cliente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Erro ao deletar Marca", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Cliente deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Marca deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

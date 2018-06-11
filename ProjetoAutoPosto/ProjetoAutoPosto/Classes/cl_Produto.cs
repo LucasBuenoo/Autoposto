@@ -130,9 +130,30 @@ namespace ProjetoAutoPosto.Classes
             return null;
         }
 
-        public void Excluir()
+        public void Delete()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                int exOK = 0;
+                BD._sql = String.Format("DELETE FROM PRODUTO WHERE ID_PRODUTO = '{0}'", id_produto);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao deletar Produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Produto deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return;
         }
     }
 }

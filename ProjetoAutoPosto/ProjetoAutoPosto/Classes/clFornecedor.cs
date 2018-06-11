@@ -175,17 +175,17 @@ namespace ProjetoAutoPosto.Classes
             try
             {
                 int exOK = 0;
-                BD._sql = String.Format("DELETE FROM CLIENTE WHERE ID_CLIENTE = '{0}'", id_fornecedor);
+                BD._sql = String.Format("DELETE FROM FORNECEDOR WHERE ID_FORNECEDOR = '{0}'", id_fornecedor);
 
                 exOK = BD.ExecutaComando(false);
 
                 if (exOK < 0)
                 {
-                    MessageBox.Show("Erro ao deletar Cliente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Erro ao deletar Fornecedor", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Cliente deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Fornecedor deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

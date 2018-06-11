@@ -19,7 +19,7 @@ namespace ProjetoAutoPosto.Cadastros
             InitializeComponent();
         }
 
-        Classes.ListaTudo ListaMarca = new ListaMarca();
+        //Classes.ListaTudo ListaMarca = new ListaMarca();
 
         private void btnADD_Click(object sender, EventArgs e)
         {
